@@ -33,7 +33,7 @@ client.connect((err) => {
 
 //output
 function allResults (res){
-  console.log(`Found ${result.rowCount} person(s) by the name '${givenName}':`);
+  console.log(`Found ${res.rowCount} person(s) by the name '${givenName}':`);
   res.rows.forEach(function (searchResult, index){
     let rowIndex = index + 1;
     let birthday = searchResult.birthdate
