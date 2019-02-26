@@ -19,10 +19,12 @@ knex('famous_people')
   .from('famous_people')
   .where(function(){
     this.where('first_name','=',givenName)
-    .orWhere('last_name','=',givenName)})
+    .orWhere('last_name','=',givenName)
+  })
   .then(function(searchResult){
     allResults(searchResult);
-  }).finally(function() {
+    })
+  .finally(function() {
     knex.destroy();
   })
 
