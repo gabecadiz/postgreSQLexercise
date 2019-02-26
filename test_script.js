@@ -26,7 +26,6 @@ client.connect((err) => {
     if(err){
       return console.error("error running query", err);
     };
-    console.log(`Found ${result.rowCount} person(s) by the name '${givenName}':`);
     allResults(result);
     client.end();
   });
@@ -34,6 +33,7 @@ client.connect((err) => {
 
 //output
 function allResults (res){
+  console.log(`Found ${result.rowCount} person(s) by the name '${givenName}':`);
   res.rows.forEach(function (searchResult, index){
     let rowIndex = index + 1;
     let birthday = searchResult.birthdate
